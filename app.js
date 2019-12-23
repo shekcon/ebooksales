@@ -19,18 +19,18 @@ app.use(express.static(`${__dirname}/public`));
 
 app.get('/', (req, res) => {
     res.render('index', {
-        publicKey: config.publicStripe
+        publicKey: config.publicStripe,
+        price: 2500
     })
 })
 
 app.post('/charge', (req, res) => {
-    const amount = 2500;
     stripe.customers.create({
         email: req.body.stripeEmail,
         source: req.body.stripeToken
     })
     .then(customer => stripe.charges.create({
-        amount,
+        amount: req.body.amount,
         description:"Web Development Ebook",
         currency: 'usd',
         customer: customer.id

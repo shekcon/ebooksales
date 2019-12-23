@@ -8,11 +8,13 @@
                 Learn web development ebook
             </p>
             <form action="/charge" method="POST">
+                <input type="amount" name="amount" value="{{price}}" style="display: none">
                 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{publicKey}}"
                     data-amount="2500" data-name="Web Development Ebook" data-description="Ebook written by Shekcon"
                     data-image="/img/marketplace.png" data-locale="auto">
                     </script>
                 <script>
+
                     // Hide default stripe button
                     document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
                 </script>
