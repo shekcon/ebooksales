@@ -1,1 +1,13 @@
 Ebook sales
+
+# Installation
+
+```
+    docker-compose build
+```
+
+# Development
+
+```
+    docker-compose up
+```
