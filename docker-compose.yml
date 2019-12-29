@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  app:
+    build: .
+    command: npm start
+    ports: 
+        - "3000:3000"
+    restart: unless-stopped
